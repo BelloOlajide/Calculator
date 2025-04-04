@@ -1,18 +1,27 @@
+
+let display = document.getElementById('display');
+
 function appendToDisplay(value) {
-    document.getElementById('display').value += value;
-}
+    if (display.value === "0") {
+        // if the default value display is zero, the next input should display the value inputed
+        display.value = value;
+    } else {
 
-function clearDisplay() {
-    document.getElementById('display').value = "";
+        // if not, let subsequent inputed values be joined together on display
+        display.value += value;
+    }
 }
-
 
 function calculate() {
     try {
-        let result = eval(document.getElementById('display').value);
-        document.getElementById('display').value = result;
+        display.value = eval(display.value);
+        result = display.value;
     } catch (error) {
-        alert("Invalid Expression");
+        display.value = "Error";
         clearDisplay();
     }
+}
+
+function clearDisplay() {
+    display.value = "0";
 }
