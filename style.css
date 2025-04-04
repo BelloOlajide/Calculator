@@ -79,6 +79,11 @@ button.red:hover{
 
 
      /* mobile view */
+     @media (width <= 500px){
+        body>div{
+            height: 80vh;
+          }
+     }
 
 
 @media(height <= 500px){
