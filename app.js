@@ -25,3 +25,8 @@ function calculate() {
 function clearDisplay() {
     display.value = "0";
 }
+
+// function to remove the last digit from the display
+function removeDigitFromInput() {
+   display.value = display.value.slice(0, -1);
+}
